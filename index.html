@@ -30,11 +30,18 @@
             } else if (subtotal >= 500) {
                 comissionRate = 0.10;
             } else if (subtotal > 0) {
-                commissionRate = 0.05;
+                commissionRate = 0;
             }
 
             let comission = subtotal * comissionRate;
             let totalEarnings = subtotal + comission;
+
+            document.write(
+                "Hello " + username + ", here is your weekly comission report. <br>" +
+                "Your sales total is $" + subtotal.toFixed(2) + ", so your commisionRate is" + (comissionRate * 100).toFixed(2) + "%.<br>" +
+                "Your total comission is $" + commission.toFixed(2) + ".<br>" +
+                "Your total earnings are $" + totalEarnings.toFixed(2) + "."
+            )
 
         </script>
     </body>
