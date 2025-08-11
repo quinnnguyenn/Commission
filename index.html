@@ -8,8 +8,34 @@
     </head>
     <body>
         <script>
-            prompt("What is your name?");
-            prompt("Enter the dollar amount for your sales a single sale at a time. Enter Done when you are finished.");
+            let subtotal = 0;
+            let input;
+
+            const username = prompt("What is your name?");
+
+            do {
+                input = prompt("Enter the dollar amount for your sales a single sale at a time. Enter done when you are finished.");
+                if(input !== null && input.toLowerCase() !== "done") {
+                    let sale = parseFloat(input);
+                    if (!isNaN(sale) && sale > 0) {
+                        subtotal += sale;
+                    }
+                }
+            } while (input !== null && input.toLowerCase () !== "done");
+
+            let commissionRate = 0;
+
+            if (subtotal >= 1000) {
+                comissionRate = 0.15;
+            } else if (subtotal >= 500) {
+                comissionRate = 0.10;
+            } else if (subtotal > 0) {
+                commissionRate = 0.05;
+            }
+
+            let comission = subtotal * comissionRate;
+            let totalEarnings = subtotal + comission;
+
         </script>
     </body>
 </html>
